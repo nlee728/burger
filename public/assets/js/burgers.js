@@ -22,11 +22,10 @@ $(function() {
   });
 
   $(".addBtn").on("submit", function(event) {
-    // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
     var newBurger = {
-      name: $("#ca").val().trim()
+      name: $("#addBurger").val().trim()
     };
 
     // Send the POST request.

@@ -1,3 +1,7 @@
+body {
+  background-image: url(../images/wallpaper.jpg);
+}
+
 li {
   padding: 5px;
   margin: 5px;
@@ -8,10 +12,10 @@ li {
   font-weight: bold;
 }
 
-.create-update-form {
+.container {
   padding: 5px;
   margin: 5px;
-  background: aqua;
+  background: orange;
 }
 
 .form-group {

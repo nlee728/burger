@@ -6,9 +6,11 @@
       <div class="col-md-6">
         {{#each burgers}}
           {{#unless eaten}}
-                <input type="text" name="burgerName" value="{{burger_name}}">
+             <ul>
+               {{burger_name}}
                 <button type="submit" class="devourBtn" data-id="{{id}}" data-eaten="{{devoured}}">Devour!</button>
-           {{/unless}}
+            </ul>  
+          {{/unless}}
         {{/each}}
         </div>
          
@@ -19,9 +21,9 @@
             <div class="burgerEaten">
               <div>
                 {{#if eaten}}
-                <input type="text" id="eatenName">
+                <div data-id="{{id}}" data-eaten="{{devoured}}"></div>
                 {{/if}}
-                {{this.burger_name}}
+                {{burger_name}}
               </div>
             </div>
           {{/if}}
@@ -31,13 +33,15 @@
   </div>
 </main>
 
+<div class="container">
 <h2>Add A Burger</h2>
 
 <div class="row">
   <div class="col-md-12">
     <form>
-      <input type="text" id="name" name="burger_name" placeholder="Burger">
-      <button type="submit" class="addBtn">Add Burger</button>
+      <input type="text" id="burger_name" name="burger_name" placeholder="Burger">
+      <button type="submit" class="addBtn" id="addBurger">Add Burger</button>
     </form>
   </div>
+</div>
 </div>
