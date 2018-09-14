@@ -1,31 +1,37 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-  $(".devourBtn").on("click", function(event) {
-    var id = $(this).data("id");
-    var eaten = $(this).data("eaten");
 
-    var eatenState = {
-      devoured: eaten
+  //Devour button on-click handler
+  $(".change-eaten").on("click", function(event) {
+    var id = $(this).data("id");
+    var newEaten = $(this).data("neweaten");
+
+    var newEatenState = {
+      devoured: newEaten
     };
 
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
-      data: eatenState
+      data: newEatenState
     }).then(
       function() {
-        console.log("changed eaten to", eaten);
+        console.log("Changed burger status to", newEaten);
         // Reload the page to get the updated list
         location.reload();
       }
     );
   });
 
-  $(".addBtn").on("submit", function(event) {
+  //Order button on-click handler
+  $(".create-form").on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
+    //Save the new burger into a variable
     var newBurger = {
-      name: $("#addBurger").val().trim()
+      burger_name: $("#ca").val().trim(),
+      devoured: false
     };
 
     // Send the POST request.
@@ -34,7 +40,7 @@ $(function() {
       data: newBurger
     }).then(
       function() {
-        console.log("created new burger");
+        console.log("Created the new burger");
         // Reload the page to get the updated list
         location.reload();
       }

@@ -1,5 +1,25 @@
 body {
   background-image: url(../images/wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+#burger-pic {
+  width: 100px;
+}
+
+#small-burger {
+  width: 20px;
+}
+
+h1 {
+  color: white;
+  font-weight: bold;
+}
+
+h4 {
+  font-weight: bold;
 }
 
 li {
@@ -8,16 +28,28 @@ li {
   background: #faebd7;
 }
 
+button {
+  background-color: green;
+  color: white;
+}
+
 .label {
   font-weight: bold;
 }
 
 .container {
   padding: 5px;
-  margin: 5px;
+  margin: 20px;
   background: orange;
+  align-content: center;
+  opacity: .9;
+  width: 100%;
 }
 
-.form-group {
-  margin-bottom: 5px;
+.order-container {
+  padding: 10px;
+  margin: 20px;
+  background: orangered;
+  align-content: center;
+  width: 40%;
 }
