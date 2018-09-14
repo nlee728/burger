@@ -1,6 +1,6 @@
--- Insert a set of records.
-INSERT INTO burgers (burger_name) VALUES ("The Captain America");
-INSERT INTO burgers (burger_name) VALUES ("The Black Panther");
-INSERT INTO burgers (burger_name) VALUES ("The Ant Man");
-INSERT INTO burgers (burger_name) VALUES ("The Black Widow");
-INSERT INTO burgers (burger_name) VALUES ("The Valkyrie");
+INSERT INTO burgers (name) VALUES ('Grilled Cheese');
+INSERT INTO burgers (name) VALUES ('Bacon Cheeseburger');
+INSERT INTO burgers (name, devoured) VALUES ('Hot Ham', true);
+INSERT INTO burgers (name, devoured) VALUES ('Pizza Burger', true);
+INSERT INTO burgers (name, devoured) VALUES ('The Italian', true);
+INSERT INTO burgers (name) VALUES ('Sloppy Joe');

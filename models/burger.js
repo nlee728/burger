@@ -2,24 +2,28 @@
 var orm = require("../config/orm.js");
 
 var burger = {
-  selectAll: function(callBack) {
+  all: function(cb) {
     orm.all("burgers", function(res) {
-      callBack(res);
+      cb(res);
     });
   },
-  
-  insertOne: function(cols, vals, callBack) {
+  // The variables cols and vals are arrays.
+  create: function(cols, vals, cb) {
     orm.create("burgers", cols, vals, function(res) {
-      callBack(res);
+      cb(res);
     });
   },
-  
-  updateOne: function(objColVals, condition, callBack) {
+  update: function(objColVals, condition, cb) {
     orm.update("burgers", objColVals, condition, function(res) {
-      callBack(res);
+      cb(res);
+    });
+  },
+  delete: function(condition, cb) {
+    orm.delete("burgers", condition, function(res) {
+      cb(res);
     });
   }
 };
 
-// Export the database functions for the controller
+// Export the database functions for the controller (burgersController.js).
 module.exports = burger;
